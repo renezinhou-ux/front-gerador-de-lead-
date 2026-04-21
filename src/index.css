@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --color-bg: #0A0A0B;
+  --color-surface: #111114;
+  --color-border: #1E1E24;
+  --color-accent: #00E5A0;
+  --color-accent-blue: #3B82F6;
+  --color-text-primary: #F1F0EC;
+  --color-text-muted: #6B6B7A;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased text-[13px] selection:bg-accent/30 selection:text-accent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-sans font-bold;
+  }
+
+  .font-mono {
+    @apply font-mono tracking-tight;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full hover:bg-text-muted/30 transition-colors;
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface/80 backdrop-blur-md border border-border;
+  }
+
+  .sharp-card {
+    @apply bg-surface border border-border p-4 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-bg px-4 py-2 font-display font-bold uppercase tracking-wider text-xs hover:bg-accent/90 transition-all active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply border border-border text-text-primary px-4 py-2 font-display font-bold uppercase tracking-wider text-xs hover:bg-border transition-all active:scale-95;
+  }
+
+  .indicator-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+}

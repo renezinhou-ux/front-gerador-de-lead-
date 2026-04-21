@@ -1,0 +1,6 @@
+{
+  "name": "Gerador de Leads Ops Console",
+  "description": "Production-grade lead generation monitoring dashboard with pipeline visualization, real-time metrics, and scoring configuration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["Data Visualization", "Real-time Monitoring"]
+}
